@@ -27,10 +27,10 @@ class Song
    name_of_song
   end
 
-  def self.create_by_name(new_song)
-    name_of_song = self.new
-    name_of_song = new_song
+  def self.create_by_name(song_prop)
+    name_of_song = self.new('song_prop')
     name_of_song.save
+   
   end
 
 end
