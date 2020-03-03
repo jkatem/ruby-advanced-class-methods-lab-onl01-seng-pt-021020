@@ -1,28 +1,24 @@
-require 'pry'
+
 
 class Song
   attr_accessor :name, :artist_name
 
-    # def name= (x)
-    #   @name = x
-    # end
 
-    # def name
-    #   @name
-    # end
+  @@all = []
 
-
-  @@all = []   # => This is a class variable with an empty array
-
-  def self.all  # => basically saying Song.all
-    #do something
+  def self.all
     @@all
   end
 
-binding 'pry'
- 
+
   def save
     self.class.all << self
   end
+
+  def self.create
+    @name_of_song = self.new
+    @name_of_song.save
+    @name_of_song
+  end   
 
 end
