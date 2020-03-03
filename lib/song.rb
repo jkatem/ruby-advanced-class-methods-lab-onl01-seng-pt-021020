@@ -16,15 +16,21 @@ class Song
   end
 
   def self.create
-    @name_of_song = self.new
-    @name_of_song.save
-    @name_of_song
+    name_of_song = self.new
+    name_of_song.save
+    name_of_song
   end
 
   def self.new_by_name(new_song)
    name_of_song = self.new
    name_of_song.name = new_song
    name_of_song
- end
- 
+  end
+
+  def self.create_by_name(new_song)
+    name_of_song = self.new
+    name_of_song.name = new_song
+    new_song.save
+  end
+
 end
